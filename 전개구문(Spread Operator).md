@@ -15,7 +15,6 @@ console.log(...str);	//  s t r i n g
 <br>
 
 ## 전개 구문 활용 대상
-<hr />
 
 ### - 객체
 객체 병합
