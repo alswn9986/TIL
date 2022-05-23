@@ -1,5 +1,4 @@
 ## 전개 구문(Spread Operator)
-<hr />
 
 > **NOTE**   
 > 반복 가능한 iterable 객체에 적용하여 요소 하나 하나로 전개시킨다.
