@@ -46,6 +46,10 @@ var missingNumber = function(nums) {
 <br>
 
 개선 코드 2 (비트 연산자)
+- ^ 연산자는 비트 XOR 연산자이다.
+- XOR은 값이 두 번 적용되면 초기 값으로 돌아온다.
+- 순서가 다르더라도 같은 값이 두 번 XOR되면 초기값과 같다.
+- 0부터 n까지의 값을 초기값 0에 XOR하고 배열의 모든 수를 XOR하면 한 번만 XOR된 값이 남는다.
 ```js
 /**
  * @param {number[]} nums
