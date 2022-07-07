@@ -36,6 +36,9 @@ if (obj.chain1 && obj.chain1.chain2 && obj.chain1.chain2.chain3) {
 
 ## **?.** 연산자를 통한 속성 값 접근
 **.** 연산자 대신 **?.** 연산자를 사용하면 해당 객체가 nullish(null이나 undefined)인 경우 TypeError 대신 undefined를 반환한다.
+* **?.** 는 존재하지 않아도 괜찮은 대상에만 사용해야 한다.
+* 선언이 완료된 변수를 대상으로만 동작한다.
+
 ```js
 // 객체에 사용
 obj?.chain1?.chain2?.chain3 // hello
