@@ -14,3 +14,66 @@ REST API를 설계, 빌드, 문서화 및 사용하는데 도움이 되는 OpenA
 - API 명세서를 직접 작성하는 대신 Swagger를 사용해 API를 문서화할 수 있다.
 - Spring REST Docs와 달리 코드 몇 줄만 추가하여 만들 수 있다.
 - 문서 화면에서 API를 바로 테스트할 수 있다.
+
+## spring boot with swagger 3.0
+1. Swagger 사용을 위한 의존성 추가(springfox 사용)
+```Groovy
+implementation "io.springfox:springfox-boot-starter:3.0.0"
+implementation "io.springfox:springfox-swagger-ui:3.0.0"
+```
+
+2. Swagger 설정
+```java
+@Configuration
+public class SwaggerConfig {
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.OAS_30)
+                .useDefaultResponseMessages(false)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.example.sample.controller"))
+                .paths(PathSelectors.any())
+                .build()
+                .apiInfo(apiInfo());
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title("Practice Swagger")
+                .description("practice swagger config")
+                .version("1.0")
+                .build();
+    }
+}
+```
+
+3. Swagger-ui 접속하여 확인
+- Swagger2: http://localhost:8080/swagger-ui.html
+- Swagger3: http://localhost:8080/swagger-ui/index.html
+![](./../images/swagger적용.png)
+
+4. Controller에 API 작성하고 설명 추가
+```java
+@RestController
+public class BasicController {
+    @PostMapping("/api/member")
+    @ApiOperation(value = "사용자 목록 조회", notes = "가입된 사용자 목록을 조회합니다.")
+    public List<String> getMemberList() {
+    	List<String> memberList = Arrays.asList("anna", "tom", "grace");
+        return memberList;
+    }
+
+    @GetMapping("/api/member/{id}")
+    @ApiOperation(value = "사용자 조회", notes = "ID로 사용자를 조회합니다.")
+    public String getMemberById(@PathVariable("id") String id) {
+    	List<String> memberList = Arrays.asList("anna", "tom", "grace");
+    	return memberList.stream()
+    			.filter(item -> item.equals(id))
+    			.findAny()
+    			.orElse(null);
+    }
+}
+```
+
+5. 다양한 파라미터로 API 호출하여 테스트
+![](./../images/swagger테스트.png)
