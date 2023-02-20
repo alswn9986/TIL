@@ -60,3 +60,19 @@ public class LambdaGeneric {
     }
 }
 ```
+
+<br>
+
+## Java에서 기본적으로 제공하는 함수형 인터페이스
+|함수형 인터페이스|Descriptor|Method|
+|------|---|---|
+|Predicate|T -> boolean|boolean test(T t)|
+|Consumer|T -> void|void accept(T t)|
+|Supplier|() -> T|T get()|
+|Function<T, R>|T -> R|R apply(T t)|
+|Comparator|(T, T) -> int|int compare(T o1, T o2)|
+|Runnable|() -> void|void run()|
+|Callable|() -> T|V call()|
+|BiPredicate|(T, U) -> boolean|boolean test(T t, U u)|
+|BiConsumer|(T, U) -> void|void accept(T t, U u)|
+|BiFunction|(T, U) -> R|R apply(T t, U u)|
