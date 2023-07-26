@@ -76,7 +76,7 @@
 - unique: 제약조건 설정
 - columnDefinition: 컬럼 정보를 직접적으로 지정
 - length: varchar의 길이 조정, 기본 값은 255
-- precsion, scale: BigInteger, BigDecimal 타입에서 사용, 소수점 포함 자리 수와 소수의 자리수
+- precision, scale: BigInteger, BigDecimal 타입에서 사용, 소수점 포함 자리 수와 소수의 자리수
 
 <br>
 
