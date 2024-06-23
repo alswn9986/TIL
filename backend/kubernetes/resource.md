@@ -57,8 +57,7 @@
 - PodDisruptionBudget
 - CustomResourceDefinition
 
-
-
-https://happycloud-lee.tistory.com/248
-https://thecodingmachine.tistory.com/9
-https://somaz.tistory.com/198
+# 참고자료
+- https://happycloud-lee.tistory.com/248
+- https://thecodingmachine.tistory.com/9
+- https://somaz.tistory.com/198
